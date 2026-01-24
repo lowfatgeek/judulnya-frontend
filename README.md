@@ -55,6 +55,9 @@ Create a `.env.local` file for local development or set these in your deployment
 4. **Environment Variables**:
    - Go to the "Environment" tab.
    - Add `NEXT_PUBLIC_API_BASE_URL` with your backend URL.
+   - **Important**: Do **NOT** include a trailing slash. 
+     - Correct: `https://toolkit-judulnya.2r5rpk.easypanel.host`
+     - Incorrect: `https://toolkit-judulnya.2r5rpk.easypanel.host/`
    - **Important**: Since `NEXT_PUBLIC_` variables are baked in at build time, you must ensure this variable is set during the BUILD phase in EasyPanel if possible, or build the image with the variable present. 
    - *Note*: For Next.js Output Standalone, runtime runtime variables are often not supported for `NEXT_PUBLIC_` unless you use a runtime config solution. For this MVP, ensure the build arg or environment is present when the image is built. EasyPanel usually builds the image with the provided env vars.
    
