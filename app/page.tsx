@@ -14,8 +14,8 @@ export default function Home() {
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const POLLING_INTERVAL = 2000;
-  const MAX_POLL_TIME = 90000; // 90s
+  const POLLING_INTERVAL = 3000;
+  const MAX_POLL_TIME = 300000; // 300s (5 mins) to be safe
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Cleanup effect
